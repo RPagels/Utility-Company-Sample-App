@@ -9,6 +9,9 @@ using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
 using ImageCircle.Forms.Plugin.Droid;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace Utility.Droid
 {
@@ -17,6 +20,13 @@ namespace Utility.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            //AppCenter.Start("android=d0dddecd-9d56-463e-8dcb-b4abdeba4e27;" +
+            //      "uwp={Your UWP App secret here};" +
+            //      "ios={Your iOS App secret here}",
+            //      typeof(Analytics), typeof(Crashes));
+            AppCenter.Start("android=d0dddecd-9d56-463e-8dcb-b4abdeba4e27;" +
+                  typeof(Analytics), typeof(Crashes));
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
